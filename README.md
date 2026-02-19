@@ -1,19 +1,59 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta plantilla proporciona una configuración mínima para hacer funcionar React en Vite con HMR y algunas reglas de ESLint.
 
-Currently, two official plugins are available:
+Actualmente, hay dos plugins oficiales disponibles:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) utiliza [Babel](https://babeljs.io/) (o [oxc](https://oxc.rs) cuando se usa en [rolldown-vite](https://vite.dev/guide/rolldown)) para Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) utiliza [SWC](https://swc.rs/) para Fast Refresh
 
-## React Compiler
+## Instalación
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Para comenzar con esta plantilla, necesitarás clonar el repositorio y configurar tu entorno. Sigue estos pasos:
 
-## Expanding the ESLint configuration
+1. **Clonar el repositorio**:  
+   Abre tu terminal y ejecuta:  
+   ```
+   git clone <url-del-repositorio>
+   ```  
+   Reemplaza `<url-del-repositorio>` con la URL real del repositorio (por ejemplo, `https://github.com/tu-usuario/tu-repositorio.git`).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Instalar Node.js**:  
+   Este proyecto requiere Node.js versión 24 o superior. Si no lo tienes instalado:  
+   - Descárgalo e instálalo desde el sitio web oficial: [nodejs.org](https://nodejs.org/en/download). Selecciona la versión LTS (v24.x.x) para tu sistema operativo.  
+   - Alternativamente, usa un gestor de versiones como [nvm](https://github.com/nvm-sh/nvm) (Node Version Manager):  
+     - Instala nvm siguiendo las instrucciones en su página de GitHub.  
+     - Luego ejecuta:  
+       ```
+       nvm install 24
+       nvm use 24
+       ```  
+   Verifica la instalación ejecutando `node -v` en tu terminal; debería mostrar algo como `v24.x.x`.
+
+3. **Instalar dependencias**:  
+   Navega al directorio clonado:  
+   ```
+   cd tu-repositorio
+   npm install
+   ```
+
+Para una guía visual sobre cómo clonar el repositorio y ejecutar el proyecto, mira este video: [Cómo Clonar y Ejecutar el Proyecto](https://www.youtube.com/watch?v=lmTiL3Mld50).
+
+## Uso
+
+Para iniciar el servidor de desarrollo:  
+```
+npm run dev
+```  
+Esto ejecutará la aplicación en modo de desarrollo con reemplazo de módulos en caliente (HMR). Abre [http://localhost:5173](http://localhost:5173) en tu navegador para verla.
+
+## Compilador de React
+
+El Compilador de React actualmente no es compatible con SWC. Consulta [este issue](https://github.com/vitejs/vite-plugin-react/issues/428) para seguir el progreso.
+
+## Expandir la configuración de ESLint
+
+Si estás desarrollando una aplicación de producción, recomendamos actualizar la configuración para habilitar reglas de lint con reconocimiento de tipos:
 
 ```js
 export default defineConfig([
@@ -21,29 +61,29 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
+      // Otras configuraciones...
 
-      // Remove tseslint.configs.recommended and replace with this
+      // Elimina tseslint.configs.recommended y reemplázalo con esto
       tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
+      // Alternativamente, usa esto para reglas más estrictas
       tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+      // Opcionalmente, agrega esto para reglas estilísticas
       tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
+      // Otras configuraciones...
     ],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // otras opciones...
     },
   },
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+También puedes instalar [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) y [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) para reglas de lint específicas de React:
 
 ```js
 // eslint.config.js
@@ -55,10 +95,10 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
+      // Otras configuraciones...
+      // Habilita reglas de lint para React
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
+      // Habilita reglas de lint para React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -66,7 +106,7 @@ export default defineConfig([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
+      // otras opciones...
     },
   },
 ])
