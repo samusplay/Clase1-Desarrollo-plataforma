@@ -1,6 +1,8 @@
 import Constante from "../bases/constante";
 import Buscadores from "../components/Buscadores";
 import GeneradorAleatorio from "../components/GeneradorAleatorio";
+import NumeroAleatorio from "../components/NumeroAleatorio";
+import TemplateStrings from "../components/TemplateStrings";
 
 //pasamos  props a componente padre
 export default function BasesView() {
@@ -26,6 +28,19 @@ export default function BasesView() {
                 </h2>
                 <Buscadores />
 
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">
+                    Ejercicios Template String
+                </h2>
+                <TemplateStrings />
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">
+                    Ejercicio UseState
+                </h2>
+                <NumeroAleatorio />
             </div>
 
 
