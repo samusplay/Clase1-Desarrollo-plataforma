@@ -1,5 +1,6 @@
 import Constante from "../bases/constante";
 import Buscadores from "../components/Buscadores";
+import CalculadoraSumas from "../components/CalculadoraSumas";
 import GeneradorAleatorio from "../components/GeneradorAleatorio";
 import NumeroAleatorio from "../components/NumeroAleatorio";
 import TemplateStrings from "../components/TemplateStrings";
@@ -41,6 +42,12 @@ export default function BasesView() {
                     Ejercicio UseState
                 </h2>
                 <NumeroAleatorio />
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">
+                    Ejercicio calculos
+                </h2>
+                <CalculadoraSumas />
             </div>
 
 
