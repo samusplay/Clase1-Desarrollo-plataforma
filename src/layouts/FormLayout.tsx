@@ -16,7 +16,7 @@ export default function FormLayout(){
       </div>
 
       {/* Contenedor de la Tarjeta (Aquí vivirá tu formulario) */}
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8">
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8">
         
         {/* REGLA DE ORO: El Outlet es el "hueco" donde React Router 
             inyectará las vistas hijas (como tu LoginForm) */}

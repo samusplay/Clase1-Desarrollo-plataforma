@@ -3,6 +3,7 @@ import FormLayout from "./layouts/FormLayout";
 import PruebaLayout from "./layouts/PruebaLayout";
 import BasesView from "./views/BasesView";
 import ClaseView from "./views/ClaseView";
+import ConciertoView from "./views/ConciertoView";
 import FormView from "./views/FormView";
 import InputView from "./views/InputView";
 import ProductsView from "./views/ProductsView";
@@ -24,6 +25,7 @@ export default function Router() {
                     <Route path="/formulario" element={<FormView />} />
                     <Route path="/formulario2" element={<RegisterView />} />
                     <Route path="/formulario3" element={<InputView />} />
+                    <Route path="/formularioConcierto" element={<ConciertoView />} />
                 </Route>
 
             </Routes>
