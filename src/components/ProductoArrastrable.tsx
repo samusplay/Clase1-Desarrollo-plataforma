@@ -27,7 +27,7 @@ export default function ProductoArrastrable({ producto }: Props) {
       {...listeners}
       {...attributes}
       // Estilo retro/gamer con sombras sólidas (box-shadow dura)
-      className="bg-white border-2 border-gray-900 p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] cursor-grab active:cursor-grabbing transition-all flex items-center gap-4 touch-none select-none"
+      className="bg-white border-2 border-gray-900 p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] cursor-grab active:cursor-grabbing transition-all flex items-center gap-4 touch-none select-none"
     >
       <div className="text-4xl">{producto.imagenIcono}</div>
       <div>

@@ -5,7 +5,7 @@ export default function FormView(){
     function presion(e:FormEvent<HTMLFormElement>){
         e.preventDefault();
 
-        const formData = new FormData(e.currentTarget);
+        //const formData = new FormData(e.currentTarget);
     //funcion presion para llamarlo submit
     }
     

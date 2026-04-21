@@ -23,7 +23,7 @@ export default function EncuestaForm() {
     const caracteresIngresados = valoresActuales.expectativas?.length || 0;
     const caracteresRestantes = LIMITE_CARACTERES - caracteresIngresados;
 
-    const alEnviar: SubmitHandler<EncuentaHackathon> = (data) => {
+    const alEnviar: SubmitHandler<EncuentaHackathon> = (_data) => {
         toast.success(`¡Registro exitoso!`, {
             duration: 4000,
             style: { background: '#312e81', color: '#fff', borderRadius: '10px' },
@@ -69,11 +69,11 @@ export default function EncuestaForm() {
                                 Modalidad
                             </label>
                             <div className="flex gap-2">
-                                <label className="flex items-center gap-1 cursor-pointer p-2.5 border border-gray-200 rounded-lg has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 w-full justify-center transition-all">
+                                <label className="flex items-center gap-1 cursor-pointer p-2.5 border border-gray-200 rounded-lg has-checked:border-indigo-600 has-[:checked]:bg-indigo-50 w-full justify-center transition-all">
                                     <input type="radio" value="Presencial" {...register("modalidad", { required: "Elige modalidad" })} className="w-3.5 h-3.5 text-indigo-600" />
                                     <span className="text-xs font-semibold">Presencial</span>
                                 </label>
-                                <label className="flex items-center gap-1 cursor-pointer p-2.5 border border-gray-200 rounded-lg has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 w-full justify-center transition-all">
+                                <label className="flex items-center gap-1 cursor-pointer p-2.5 border border-gray-200 rounded-lg has-checked:border-indigo-600 has-[:checked]:bg-indigo-50 w-full justify-center transition-all">
                                     <input type="radio" value="Remoto" {...register("modalidad", { required: "Elige modalidad" })} className="w-3.5 h-3.5 text-indigo-600" />
                                     <span className="text-xs font-semibold">Remoto</span>
                                 </label>
@@ -87,7 +87,7 @@ export default function EncuestaForm() {
                         <label className="block text-xs font-bold text-gray-700 mb-2 uppercase tracking-wide">Lenguajes que dominas</label>
                         <div className="grid grid-cols-3 gap-2">
                             {LENGUAJES_DISPONIBLES.map((lenguaje) => (
-                                <label key={lenguaje} className="flex items-center gap-2 p-2 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50 transition-colors has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
+                                <label key={lenguaje} className="flex items-center gap-2 p-2 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50 transition-colors has-checked:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-700">
                                     <input type="checkbox" value={lenguaje} {...register("lenguajes", { required: "Elige al menos uno" })} className="w-3.5 h-3.5 text-indigo-600 accent-indigo-600" />
                                     <span className="text-xs font-semibold text-gray-700">{lenguaje}</span>
                                 </label>
