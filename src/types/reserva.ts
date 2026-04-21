@@ -8,6 +8,7 @@ export interface ReservaTicket {
   departamento: string;
   comentarios: string;
   terminos: boolean;
+  tipoTicket: "General" | "VIP" | "Platinum";
 }
 
 export const DATA_LOCALIDADES: Record<string, string[]> = {
